@@ -5,7 +5,7 @@ $(document).ready( function(){
 	$(".icon-arrow-left-alt").hide();
 	(function(){
 	$(".callout-news p").html("NUEVAS RECETAS");
-	})()
+	})();
 
 });
 
@@ -16,6 +16,11 @@ $(document).ready( function(){
 */
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+	recipesArray.forEach(function(element){
+		if(element.highlighted == true){
+			renderRecipe(element);
+		}
+	})
 }
 
 /*
