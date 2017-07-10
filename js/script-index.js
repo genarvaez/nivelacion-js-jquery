@@ -61,7 +61,12 @@ function renderActivities(activitiesArray) {
 * archivo "templates/templates-activity.html"
 */
 function renderActivity(recipe) {
-	
+	var html = '<a href="#" class="item-activity"><span class="attribution">'+
+	'<span class="avatar"><img src="'+ recipe.userAvatar + '" class="image-avatar">'+
+	'</span><span class="meta"><span class="author">'+ recipe.userName + '</span> made '+
+	'<span class="recipe">'+ recipe.recipeName + '</span>: '+ recipe.text + '<span class="location">&mdash;'+ recipe.place + '</span></span></span>'+
+	'<div class="bg-image" style="background-image: url("'+ recipe.image + '");"></div></a>'
+	$(".list-activities").append(html);
 }
 
 
