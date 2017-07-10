@@ -14,4 +14,7 @@ $(document).ready(function(){
 		$(this).addClass('active');
 		$(".js-show-make").removeClass('active');
 	})
+	$(".icon-arrow-left-alt").click(function(){
+		$(".nav-item").attr("href", "index.html");
+	})
 })
