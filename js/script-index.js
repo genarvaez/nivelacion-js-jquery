@@ -7,6 +7,8 @@ $(document).ready( function(){
 	$(".callout-news p").html("NUEVAS RECETAS");
 	})();
 
+	renderActivities(activities);
+
 });
 
 
@@ -45,6 +47,12 @@ function renderRecipe(recipe) {
 */
 function renderActivities(activitiesArray) {
 	console.log('Activities: ', activitiesArray);
+	activitiesArray.forEach(function(element){
+		renderActivity(element);
+		if(activitiesArray.length > 0){
+			$(".wrapper-message").hide();
+		}
+	})
 }
 
 /*
