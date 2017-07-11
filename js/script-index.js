@@ -1,15 +1,11 @@
 $(document).ready( function(){
-
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 	$(".icon-arrow-left-alt").hide();
-
 	(function(){
 	$(".callout-news p").html("NUEVAS RECETAS");
 	})();
-
 	renderActivities(activities);
-
 });
 
 
@@ -34,13 +30,13 @@ function renderHighlightedRecipes(recipesArray) {
 */
 function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
-	$(".list-recipes").append('<a class="item-recipe" href="recipe.html"><span class="attribution">'+
+	var newRecipe = '<a class="item-recipe" href="recipe.html"><span class="attribution">'+
 	'<span class="title-recipe">'+ recipe.title +
 	'</span><span class="metadata-recipe"><span class="author-recipe"> '+ recipe.source.name + '</span><span class="bookmarks-recipe">'+
-	'<span class="icon-bookmark"></span></span></span></span><img src="img/recipes/320x350/'+ recipe.name + '.jpg" /></a>')
+	'<span class="icon-bookmark"></span></span></span></span><img id="'+ recipe.name+'" src="img/recipes/320x350/'+ recipe.name + '.jpg" /></a>'
+	$(".list-recipes").append(newRecipe);
+
 }
-
-
 
 
 /*

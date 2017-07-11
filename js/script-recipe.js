@@ -16,5 +16,28 @@ $(document).ready(function(){
 	})
 	$(".icon-arrow-left-alt").click(function(){
 		$(".nav-item").attr("href", "index.html");
+		localStorage.removeItem('receta');
+	});
+	
+	$('.item-recipe').click(function(e){
+		console.log(localStorage.setItem("receta",e.target.id))
+	});
+	var newReceta = localStorage.getItem("receta");
+	console.log(newReceta);
+	recipesArray.filter(function(e){
+		if(e.name == newReceta){
+			$(".title-recipe").html(e.title);
+			$(".description-recipe").html(e.excerpt);
+			$(".source").html(e.source.name);
+			$(".time").html(e.cookTime);
+			e.ingredients.forEach(function(element){
+				$(".list-ingredients").append('<li>'+ element + '</li>')
+			});
+			e.directions.forEach(function(element){
+				$(".list-directions").append('<li class="item-direction">'+ element+ '</li>')
+			})
+			$(".btn-primary").html(e.source.name)
+			return console.log(e)
+		}
 	})
 })
