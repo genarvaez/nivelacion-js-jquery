@@ -26,7 +26,7 @@ $(document).ready(function(){
 	console.log(newReceta);
 	recipesArray.filter(function(e){
 		if(e.name == newReceta){
-			$(".image-recipe").css('background-image', 'url(img/recipes/640x480/'+ e.name+'.jpg)')
+			$(".image-recipe").css('background-image', 'url(img/recipes/320x350/'+ e.name+'.jpg)')
 			$(".title-recipe").html(e.title);
 			$(".description-recipe").html(e.excerpt);
 			$(".source").html(e.source.name);
